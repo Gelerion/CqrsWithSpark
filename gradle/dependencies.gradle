@@ -1,0 +1,41 @@
+ext {
+    versions = [
+            spark: '2.2.1',
+            spark_scala: "2.11",
+            scala: "2.11.8",
+            //spring: "5.0.2.RELEASE",
+            spring: "4.3.13.RELEASE",
+            spring_kafka: "2.1.0.RELEASE",
+            jackson: "2.9.3",
+    ]
+
+    libraries = [
+            sparkCore: "org.apache.spark:spark-core_$versions.spark_scala:$versions.spark",
+            sparkSql: "org.apache.spark:spark-sql_$versions.spark_scala:$versions.spark",
+            sparkGraphX: "org.apache.spark:spark-graphx_$versions.spark_scala:$versions.spark",
+            sparkMlLib: "org.apache.spark:spark-mllib_$versions.spark_scala:$versions.spark",
+            sparkStreaming: [
+                    //"org.apache.spark:spark-streaming_$versions.scala:$versions.spark",
+                    //"org.apache.spark:spark-streaming-kafka-0-8_$versions.scala:$versions.spark",
+                    "org.apache.spark:spark-streaming_2.11:$versions.spark",
+                    "org.apache.spark:spark-streaming-kafka-0-8_2.11:$versions.spark",
+                    //"org.apache.spark:spark-yarn_$versions.scala:$versions.spark",
+            ],
+            scala: [
+                    "org.scala-lang:scala-library:$versions.scala",
+                    "org.scala-lang:scala-reflect:$versions.scala",
+                    "org.scala-lang:scala-compiler:$versions.scala"
+            ],
+            spring: [
+                    "org.springframework:spring-core:$versions.spring",
+                    "org.springframework:spring-messaging:$versions.spring"
+            ],
+            spring_kafka: "org.springframework.kafka:spring-kafka:$versions.spring_kafka",
+            jackson: [
+                    "com.fasterxml.jackson.core:jackson-core:$versions.jackson",
+                    "com.fasterxml.jackson.core:jackson-databind:$versions.jackson",
+                    "com.fasterxml.jackson.module:jackson-modules-java8:$versions.jackson@pom"
+
+            ]
+    ]
+}

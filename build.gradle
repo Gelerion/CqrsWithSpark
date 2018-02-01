@@ -1,0 +1,36 @@
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '1.11'
+    id 'org.springframework.boot' version '1.5.9.RELEASE'
+}
+
+allprojects {
+
+    apply plugin: 'java'
+    apply plugin: "idea"
+    apply plugin: "io.franzbecker.gradle-lombok"
+
+    repositories {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+        jcenter()
+    }
+
+    lombok {
+        version = '1.16.20'
+    }
+}
+
+subprojects {
+
+    apply from: "${rootDir}/gradle/dependencies.gradle"
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+
+    group = 'com.gelerion.cqrs.spark.template'
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2.1'
+}

@@ -1,0 +1,21 @@
+group = 'com.gelerion.cqrs.spark.template.bi.processor'
+
+apply plugin: 'scala'
+
+dependencies {
+    compile project(":common")
+
+    compile libraries.sparkStreaming
+
+
+    compile('com.typesafe:config:1.3.2')
+    compile('org.json4s:json4s-jackson_2.11:3.2.11')
+
+    compile('com.typesafe:config:1.3.0')
+    compile('org.json4s:json4s-jackson_2.11:3.2.11')
+    compile 'org.mongodb:mongodb-driver:3.6.1'
+
+    compile('com.fasterxml.jackson.core:jackson-core:2.6.5') {force = true}
+    compile('com.fasterxml.jackson.core:jackson-databind:2.6.5')  {force = true}
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.6.5')  {force = true}
+}

@@ -1,0 +1,4 @@
+rootProject.name = 'CqrsWithSpark'
+
+include 'common', 'forum', 'bi-processor'
+

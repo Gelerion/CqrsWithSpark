@@ -1,0 +1,7 @@
+group = 'com.gelerion.cqrs.spark.template.common'
+
+dependencies {
+    compile libraries.spring
+    compile libraries.spring_kafka
+    compile libraries.jackson
+}
