@@ -11,6 +11,21 @@ public class AddPost extends CommandSkeleton {
     private String author;
     private String message;
 
+    public AddPost() {
+
+    }
+
+    public AddPost(String author, String message) {
+        this.author = author;
+        this.message = message;
+    }
+
+    public AddPost(String id, String author, String message) {
+        super(id);
+        this.author = author;
+        this.message = message;
+    }
+
     public String getAuthor() {
         return author;
     }

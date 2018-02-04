@@ -21,6 +21,4 @@ public class ForumApplication {
     MessageBus messageBus(KafkaTemplate<String, String> kafka, ObjectMapper mapper) {
         return new MessageBus(kafka, mapper);
     }
-
-
 }

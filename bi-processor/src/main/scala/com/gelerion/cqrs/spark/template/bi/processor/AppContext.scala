@@ -62,7 +62,7 @@ object AppContext extends Config {
   }
 
   def buildNewStreamingContext(): () => StreamingContext = () => {
-    val ssc = new StreamingContext(sparkConf, 1000.millis) //implicit conversion to spark duration
+    val ssc = new StreamingContext(sparkConf, 100.millis) //implicit conversion to spark duration
     AppContext.cmdProcessor.runPipeline(ssc)
     ssc.checkpoint(checkpointDirectory)
     ssc
